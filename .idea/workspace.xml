@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b54a162-80e5-4f78-909d-714ce22fa8fc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/todoapp/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/todoapp/service/IAuthenticationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/todoapp/service/AuthenticationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/todoapp/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +23,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2jxSMXH7xWpCYAepTcFhqhNBcnY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -40,7 +38,7 @@
   "keyToString": {
     "Application.Main.executor": "Coverage",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "authentication",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "C:/Users/Ben/IdeaProjects/To-Do-List/src/Main.java",
     "settings.editor.selected.configurable": "vcs.Git"
