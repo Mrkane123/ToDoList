@@ -1,24 +1,27 @@
 package todoapp;
 
 import todoapp.model.User;
+import todoapp.service.ToDoList;
 import todoapp.service.IAuthenticationService;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.ArrayList; // Import for ArrayList
+import java.util.Scanner; // Import for Scanner
 
 public class Main {
     // Static list of users, acting as a database
     private static ArrayList<User> users = new ArrayList<>();
 
-    // Mock authentication service that always returns the first user when log in, and does nothing when sign up
+    // Mock authentication service that returns the first user when logging in
     private static IAuthenticationService authService = new IAuthenticationService() {
         @Override
         public User signUp(String username, String password) {
+            // For simplicity, return null (no sign-up logic here)
             return null;
         }
 
         @Override
         public User logIn(String username, String password) {
+            // Return the first user as a mock implementation
             return users.get(0);
         }
     };
@@ -48,36 +51,34 @@ public class Main {
                 onLogIn();
                 break;
             case 2:
-                onSignUp();
+                // Placeholder for sign-up logic
+                System.out.println("Sign-up not implemented.");
                 break;
             case 3:
                 onExit();
                 break;
             default:
                 System.out.println("Invalid choice!");
-                showMenu();
         }
     }
 
     public static void onLogIn() {
-        System.out.print("Enter your username: ");
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your username: ");
         String username = scanner.nextLine();
         System.out.print("Enter your password: ");
         String password = scanner.nextLine();
         User user = authService.logIn(username, password);
-        System.out.println("Welcome, " + user.getUsername() + "!");
-        // TODO Later: Add the to-do list operations
-    }
+        if (user != null) {
+            System.out.println("Welcome, " + user.getUsername() + "!");
 
-    public static void onSignUp() {
-        System.out.print("Enter your username: ");
-        Scanner scanner = new Scanner(System.in);
-        String username = scanner.nextLine();
-        System.out.print("Enter your password: ");
-        String password = scanner.nextLine();
-        User user = authService.signUp(username, password);
-        // TODO Later: Shows a message based on the result
+            // New code: Create a ToDoList instance with the logged-in user
+            ToDoList toDoList = new ToDoList(user);
+            toDoList.run(); // Start the to-do list interaction
+
+        } else {
+            System.out.println("Invalid credentials or user not found.");
+        }
     }
 
     public static void onExit() {
